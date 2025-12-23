@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Violet 记账 - 开启财务自由</title>
+
+    <!-- 引入英文字体 Inter 和中文字体 -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- 修改为本地路径 -->
+    <link rel="stylesheet" href="/css/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="/css/login.css">
+    <link rel="icon" href="/images/logo.svg" type="image/svg+xml">
+</head>
+<body>
+
+<!-- 背景动态气泡（纯CSS装饰） -->
+<div class="bg-circles">
+    <div class="circle c1"></div>
+    <div class="circle c2"></div>
+    <div class="circle c3"></div>
+</div>
+
+<div class="login-container">
+    <!-- 左侧品牌区 -->
+    <div class="login-left">
+        <div class="overlay"></div> <!-- 叠加层，增加文字可读性 -->
+        <div class="login-left-content">
+            <div class="brand">
+                <i class="fas fa-wallet brand-icon"></i>
+                <h1>Violet 记账</h1>
+            </div>
+            <p class="slogan">每一笔支出，都值得被认真对待。</p>
+            <div class="glass-card">
+                <ul class="features">
+                    <li><i class="fas fa-chart-pie"></i> 可视化资产分析</li>
+                    <li><i class="fas fa-cloud-upload-alt"></i> 多端云同步</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- 右侧表单区 -->
+    <div class="login-right">
+
+        <!-- 登录表单 -->
+        <div id="loginForm" class="form-wrapper active">
+            <div class="login-header">
+                <h2>欢迎回来</h2>
+                <p>继续您的理财之旅</p>
+            </div>
+
+            <form id="loginFormElement">
+                <div class="form-group">
+                    <label>账号</label>
+                    <div class="input-group">
+                        <i class="fas fa-user input-icon"></i>
+                        <input type="text" id="username" placeholder="请输入用户名" autocomplete="off" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>密码</label>
+                    <div class="input-group">
+                        <i class="fas fa-lock input-icon"></i>
+                        <input type="password" id="password" placeholder="请输入密码" required>
+                        <i class="fas fa-eye-slash toggle-password" id="togglePassword"></i>
+                    </div>
+                    <div class="forgot-pwd">
+                        <a href="#">忘记密码？</a>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-primary" id="loginBtn">
+                    <span>立即登录</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+
+                <div class="social-login">
+                    <p>其他方式登录</p>
+                    <div class="social-icons">
+                        <button type="button" class="icon-btn"><i class="fab fa-weixin"></i></button>
+                        <button type="button" class="icon-btn"><i class="fab fa-qq"></i></button>
+                    </div>
+                </div>
+            </form>
+
+            <div class="switch-form">
+                还没有账号？ <a href="#" id="showRegister">立即注册</a>
+            </div>
+        </div>
+
+        <!-- 注册表单 -->
+        <div id="registerForm" class="form-wrapper">
+            <div class="login-header">
+                <h2>创建账户</h2>
+                <p>开始规划您的第一笔预算</p>
+            </div>
+
+            <form id="registerFormElement">
+                <div class="form-group">
+                    <label>用户名</label>
+                    <div class="input-group">
+                        <i class="fas fa-user input-icon"></i>
+                        <input type="text" id="regUsername" placeholder="设置用户名" autocomplete="off" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>电子邮箱</label>
+                    <div class="input-group">
+                        <i class="fas fa-envelope input-icon"></i>
+                        <input type="email" id="regEmail" placeholder="用于找回密码" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>设置密码</label>
+                    <div class="input-group">
+                        <i class="fas fa-lock input-icon"></i>
+                        <input type="password" id="regPassword" placeholder="6位以上字符" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>确认密码</label>
+                    <div class="input-group">
+                        <i class="fas fa-check-circle input-icon"></i>
+                        <input type="password" id="regConfirmPassword" placeholder="再次输入密码" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-primary" id="registerBtn">
+                    <span>注册账户</span>
+                </button>
+            </form>
+
+            <div class="switch-form">
+                已有账号？ <a href="#" id="backToLogin">返回登录</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- 全局提示框 (Toast) -->
+<div id="toast" class="toast"></div>
+
+<script src="/js/login.js"></script>
+</body>
+</html>

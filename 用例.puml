@@ -1,0 +1,43 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+
+actor "普通用户" as User
+
+rectangle "智能记账系统" {
+
+  package "核心账务" {
+    usecase "新增账单\n(支持多币种自动换算)" as UC_Add
+    usecase "查询与筛选账单" as UC_Query
+    usecase "账单统计(按月/日)" as UC_Stat
+  }
+
+  package "AI 智能服务" {
+    usecase "自然语言对话记账" as UC_AiChat
+    usecase "生成月度消费锐评" as UC_AiReport
+    usecase "自动生成消费标签\n(必要/冲动/娱乐)" as UC_AiTag
+  }
+
+  package "增值功能" {
+    usecase "实时汇率查询" as UC_Rate
+    usecase "设置月度预算" as UC_Budget
+    usecase "数据备份与恢复" as UC_Backup
+  }
+}
+
+User --> UC_Add
+User --> UC_Query
+User --> UC_Stat
+User --> UC_AiChat
+User --> UC_AiReport
+User --> UC_Rate
+User --> UC_Budget
+User --> UC_Backup
+
+UC_Add ..> UC_AiTag : <<include>>
+@enduml
+
+@startuml
+actor  1
+
+@enduml
